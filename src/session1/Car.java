@@ -1,7 +1,7 @@
 package session1;
 
 public class Car {
-   protected String brand = "BMW";
+   public String brand;
    int year = 2022;
 
    static String color;
