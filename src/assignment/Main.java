@@ -15,7 +15,9 @@ public class Main {
         }
 
         Account nam = new Account(2,"Cao Hoàng Nam",10000);
-        if(myAccount.tranferTo(nam,10000)){
+        System.out.println("NHap so tien can chuyen khoan:");
+        int y = sc.nextInt();
+        if(myAccount.tranferTo(nam,y)){
             System.out.println("Chuyen thanh cong sang tai khoan "+nam.getName());
         }else{
             System.out.println("Chuyen khoan that bai");
