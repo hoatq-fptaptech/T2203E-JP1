@@ -4,6 +4,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+        KhachHangVN a = new KhachHangVN(1,"Nguyen Van An","2022-09-22",219,"Cá nhân");
+        KhachHangNN b = new KhachHangNN(2,"Donal Trump","2022-09-21",156,"US");
+        System.out.println(a.thanhTien());
+        System.out.println(b.thanhTien());
+
+        KhachHang kh = (KhachHang) new KhachHangVN(2,"Nguyen Van B","2022-09-22",100,"Cá nhân");
+        System.out.println(kh.thanhTien());
+
+        KhachHangVN khvn = (KhachHangVN)kh;
+        System.out.println(khvn.thanhTien());
+    }
+
+    public static void mainold2(String[] args){
         Account myAccount = new Account(1,"Trịnh Quang Hòa",1000000);
         Scanner sc = new Scanner(System.in);
         System.out.println("NHap so tien muon rut:");
