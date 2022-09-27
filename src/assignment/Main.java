@@ -4,6 +4,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+        PhoneBook pb = new PhoneBook();
+        pb.insertPhone("Nam","0987654321");
+        pb.insertPhone("Nam","0987654321");
+        pb.insertPhone("Nam","0987654322");
+        pb.insertPhone("Nam","0987654321");
+        pb.insertPhone("Tuan Anh","0987654321");
+        pb.insertPhone("Dung","0987654321");
+        System.out.println(pb.PhoneList.size());
+        pb.updatePhone("Tuan Anh","0987654321","1234567633");
+
+        PhoneNumber p = pb.searchPhone("Nam");
+        if(p != null){
+            System.out.println(p.getName());
+        }else{
+            System.out.println("Not found");
+        }
+
+        pb.sort();
+        for(PhoneNumber pn: pb.PhoneList){
+            System.out.println(pn.getName());
+        }
+    }
+
+    public static void main3(String[] args){
         KhachHangVN a = new KhachHangVN(1,"Nguyen Van An","2022-09-22",219,"Cá nhân");
         KhachHangNN b = new KhachHangNN(2,"Donal Trump","2022-09-21",156,"US");
         System.out.println(a.thanhTien());
