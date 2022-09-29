@@ -4,6 +4,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+        News n = new News(1,"AA","BB","CC","DD");
+        n.RateList[0]=5;
+        n.RateList[1]=8;
+        n.RateList[2]=8;
+        n.Calculate();
+        n.Display();
+    }
+
+    public static void main2(String[] args){
         PhoneBook pb = new PhoneBook();
         pb.insertPhone("Nam","0987654321");
         pb.insertPhone("Nam","0987654321");
