@@ -32,13 +32,32 @@ public class Controller {
         String ag = txtAge.getText();
         try {
             Integer nAge = Integer.parseInt(ag);
-            if(nAge < 0 || nAge>100)
+            if(nAge <= 0 || nAge>100)
                 throw new Exception("Vui lòng nhập tuổi hợp lệ");
-            age.setText(ag);
+            age.setText(nAge.toString());
             noticeAge.setVisible(false);
         }catch (Exception e){
             noticeAge.setText(e.getMessage());
             noticeAge.setVisible(true);
+        }
+
+        String em = txtEmail.getText();
+        if(em.isEmpty() || !em.contains("@")
+                || em.startsWith("@") || em.endsWith("@")){
+            noticeEmail.setText("Vui lòng nhập vào một email");
+            noticeEmail.setVisible(true);
+        }else{
+            noticeEmail.setVisible(false);
+            email.setText(em);
+        }
+
+        String ad = txtAddress.getText();
+        if(ad.isEmpty() || ad.length() < 10){
+            noticeAddress.setText("Vui lòng nhập vào một địa chỉ");
+            noticeAddress.setVisible(true);
+        }else{
+            noticeAddress.setVisible(false);
+            address.setText(ad);
         }
     }
 }
