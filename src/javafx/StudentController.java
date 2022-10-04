@@ -2,15 +2,18 @@ package javafx;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.net.URL;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.ResourceBundle;
 
-public class StudentController {
+public class StudentController implements Initializable {
     public TextField txtName;
     public TextField txtEmail;
     public TextField txtMark;
@@ -22,6 +25,13 @@ public class StudentController {
     private boolean sortMark = true;
 
     private ObservableList<Student> list = FXCollections.observableArrayList();
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        list.add(new Student("Hà Hoàng Hưng","hunghh@gmail.com",1));
+        list.add(new Student("Trần Văn Thành","thanhtv@gmail.com",2));
+        lv.setItems(list);
+    }
 
     public void addStudent(){
        try {
