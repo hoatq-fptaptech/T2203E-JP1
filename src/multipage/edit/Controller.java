@@ -42,7 +42,18 @@ public class Controller implements Initializable {
     }
 
     public void submit(ActionEvent actionEvent) {
-
+        try {
+            int hours = Integer.parseInt(txtHours.getText());
+            if(txtName.getText().isEmpty()
+                    || hours < 0 ){
+                throw new Exception("Vui lòng nhập dữ liệu");
+            }
+            multipage.list.Controller.editItem.setName(txtName.getText());
+            multipage.list.Controller.editItem.setHours(hours);
+            goToList(null);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
 
