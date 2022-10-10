@@ -28,7 +28,7 @@ public class Controller implements Initializable {
     }
 
     public void goToForm(ActionEvent actionEvent) throws Exception{
-        Parent listPage = FXMLLoader.load(getClass().getResource("../form/form.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("/multipage/form/form.fxml"));
         Scene listScene = new Scene(listPage,800,600);
 
         Main.rootStage.setTitle("Thêm môn học");
@@ -38,7 +38,7 @@ public class Controller implements Initializable {
     public void edit(ActionEvent actionEvent) throws Exception{
         editItem = lv.getSelectionModel().getSelectedItem();
         if(editItem == null) return;
-        Parent listPage = FXMLLoader.load(getClass().getResource("../edit/form.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("/multipage/edit/form.fxml"));
         Scene listScene = new Scene(listPage,800,600);
 
         Main.rootStage.setTitle("Sửa môn học");

@@ -14,7 +14,7 @@ public class Controller {
     public TextField txtHours;
 
     public void goToList(ActionEvent actionEvent) throws Exception{
-        Parent listPage = FXMLLoader.load(getClass().getResource("../list/list.fxml"));
+        Parent listPage = FXMLLoader.load(getClass().getResource("/multipage/list/list.fxml"));
         Scene listScene = new Scene(listPage,800,600);
 
         Main.rootStage.setTitle("Danh sách môn học");
